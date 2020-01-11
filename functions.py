@@ -80,6 +80,25 @@ Arguments:
 
 # Write your function here
 
+def prints_greeting(first_name, last_name, town):
+    """Prints a greeting.
+
+    If the person is from the same hometown then message says so.
+    If the person is from a different hometown then message shows interest 
+    to visit."""
+
+    full_name = writes_full_name(first_name, last_name)
+    same_town = tests_hometown(town)
+
+    #print greeting for people from the same town
+    if same_town == True:
+        print(f"Hi {full_name}, we're from the same town!")
+
+    #print greeting for people from a different town
+    if same_town == False:
+        print(f"Hi {full_name}, I'd like to visit {town}!")
+
+    return
 
 """PROMPT 4
 
@@ -206,5 +225,8 @@ Return:
 #tests_hometown_output = tests_hometown('Barthalameau')
 #print(tests_hometown_output)
 
-tests_writes_full_name = writes_full_name('Beaugle', 'Buddies')
-print(tests_writes_full_name)
+#tests_writes_full_name = writes_full_name('Beaugle', 'Buddies')
+#print(tests_writes_full_name)
+
+tests_prints_greeting = prints_greeting('Apple', 'Bear', 'Lake Angelus')
+#print(tests_prints_greeting)
