@@ -23,8 +23,10 @@ def print_indices(items):
         berry 1
         cherry 2
     """
-
-    print("Nothing at all")
+    
+    for index in range(len(items)):
+        item = items[index]
+        print(f'{item} {index}')
 
 
 def words_in_common(words1, words2):
@@ -97,3 +99,9 @@ def smallest_n_items(items, n):
     """
 
     return []
+
+
+"""Test code below"""
+#fruits = ['apple', 'berry', 'cherry']
+#print_indices(fruits)
+
