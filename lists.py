@@ -62,7 +62,20 @@ def words_in_common(words1, words2):
         []
     """
 
-    return ['the wrong thing']
+    # Convert each input list into a set
+    words1_set = set(words1)
+    words2_set = set(words2)
+    
+    #Take the intersection of the sets
+    intersection = words1_set & words2_set
+
+    #Save the intersection as a list
+    intersection_list = list(intersection)
+
+    #Sort the list
+    intersection_sorted = sorted(intersection_list)
+
+    return intersection_sorted
 
 
 def every_other_item(items):
@@ -102,6 +115,10 @@ def smallest_n_items(items, n):
 
 
 """Test code below"""
-#fruits = ['apple', 'berry', 'cherry']
+fruits = ['apple', 'cherry', 'berry']
 #print_indices(fruits)
 
+fav_foods = ['berry', 'cherry', 'whipped cream']
+
+intersection_output = words_in_common(fruits, fav_foods)
+print(intersection_output)
