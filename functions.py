@@ -5,6 +5,7 @@ Please complete the following promps.
 
 #################### PART 1 ####################
 
+
 """PROMPT 1
 
 Write a function that returns `True` if a town name matches the name of your
@@ -23,6 +24,14 @@ Return:
 
 # Write your function here
 
+def tests_hometown(town):
+    """Tests whether a town name matches my home town, 'Lake Angelus' 
+
+    IN: Take in a town name as an input
+    OUT: Returns True / False as an output"""
+
+    return town == 'Lake Angelus'
+
 
 """PROMPT 2
 
@@ -40,6 +49,11 @@ Return:
 """
 
 # Write your function here
+
+def writes_full_name(first, last):
+    """Takes in first and last name and returns a full name"""
+
+    return first + " " + last
 
 
 """PROMPT 3
@@ -182,3 +196,15 @@ Return:
 """
 
 # Write your function here
+
+
+
+
+
+
+"""Developer test code is below"""
+#tests_hometown_output = tests_hometown('Barthalameau')
+#print(tests_hometown_output)
+
+tests_writes_full_name = writes_full_name('Beaugle', 'Buddies')
+print(tests_writes_full_name)

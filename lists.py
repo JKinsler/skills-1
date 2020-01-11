@@ -112,21 +112,54 @@ def smallest_n_items(items, n):
         [1, 1]
     """
 
-    return []
+    #sort the items in the input list
+    items_sorted = sorted(items)
+
+    #test whether n is 0
+    if n == 0:
+
+        # return an empty array if n is 0
+        return []
+
+    else:
+        #make a new list that comprises the first 'n' items of the sorted items
+        index = 0
+        smallest = []
+        while index < n:
+            smallest.append(items_sorted[index])
+            index = index + 1
+
+        #reverse sort 
+        smallest_decending = smallest[::-1]
+
+        #return a reverse sorted list of n items, if n is greater than 0
+        return smallest_decending
 
 
-"""Developer test code is below."""
 
-fruits = ['apple', 'cherry', 'berry']
+
+"""Developer tests are below"""
+
+#fruits = ['apple', 'cherry', 'berry']
 #print_indices(fruits)
 
-fav_foods = ['berry', 'cherry', 'whipped cream']
+#fav_foods = ['berry', 'cherry', 'whipped cream']
 
 #intersection_output = words_in_common(fruits, fav_foods)
 #print(intersection_output)
 
-long_list = fruits + fav_foods + [1, 2, 3, 4, 5, 6]
+#numbers = [10523, 6, 12, 19824, 2, 18]
+
+#long_list = fruits + fav_foods + [1, 2, 3, 4, 5, 6]
 #print(long_list)
 
 #every_other_output = every_other_item(long_list)
 #print(every_other_output)
+
+#print(fav_foods)
+#small_foods = smallest_n_items(fav_foods, 2)
+#print(small_foods)
+
+#print(numbers)
+#smallest_numbers = smallest_n_items(numbers, 0)
+#print(smallest_numbers)
