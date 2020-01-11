@@ -23,9 +23,10 @@ def print_indices(items):
         berry 1
         cherry 2
     """
-    
+
     for index in range(len(items)):
         item = items[index]
+        
         print(f'{item} {index}')
 
 
@@ -87,7 +88,7 @@ def every_other_item(items):
        ['a', True, 0]
     """
 
-    return ['the wrong thing']
+    return items[::2]
 
 
 def smallest_n_items(items, n):
@@ -114,11 +115,18 @@ def smallest_n_items(items, n):
     return []
 
 
-"""Test code below"""
+"""Developer test code is below."""
+
 fruits = ['apple', 'cherry', 'berry']
 #print_indices(fruits)
 
 fav_foods = ['berry', 'cherry', 'whipped cream']
 
-intersection_output = words_in_common(fruits, fav_foods)
-print(intersection_output)
+#intersection_output = words_in_common(fruits, fav_foods)
+#print(intersection_output)
+
+long_list = fruits + fav_foods + [1, 2, 3, 4, 5, 6]
+#print(long_list)
+
+#every_other_output = every_other_item(long_list)
+#print(every_other_output)
