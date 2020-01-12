@@ -123,6 +123,12 @@ Return:
 
 # Write your function here
 
+def test_if_berry(fruit):
+    """Tests whether a fruit is one of: strawberry, raspberry, blackburry,
+    currant. """
+
+    berries = ['strawberry', 'raspberry', 'blackburry', 'currant']
+    return fruit in berries
 
 """PROMPT 5
 
@@ -228,5 +234,7 @@ Return:
 #tests_writes_full_name = writes_full_name('Beaugle', 'Buddies')
 #print(tests_writes_full_name)
 
-tests_prints_greeting = prints_greeting('Apple', 'Bear', 'Lake Angelus')
+#tests_prints_greeting = prints_greeting('Apple', 'Bear', 'Lake Angelus')
 #print(tests_prints_greeting)
+
+#print(test_if_berry('apple'))
