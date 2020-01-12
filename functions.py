@@ -24,8 +24,9 @@ Return:
 
 # Write your function here
 
+
 def tests_hometown(town):
-    """Tests whether a town name matches my home town, 'Lake Angelus' 
+    """Test whether a town name matches my home town, 'Lake Angelus' 
 
     IN: Take in a town name as an input
     OUT: Returns True / False as an output"""
@@ -50,8 +51,9 @@ Return:
 
 # Write your function here
 
+
 def writes_full_name(first, last):
-    """Takes in first and last name and returns a full name"""
+    """Take in first and last name and returns a full name"""
 
     return first + " " + last
 
@@ -80,8 +82,9 @@ Arguments:
 
 # Write your function here
 
+
 def prints_greeting(first_name, last_name, town):
-    """Prints a greeting.
+    """Print a greeting.
 
     If the person is from the same hometown then message says so.
     If the person is from a different hometown then message shows interest 
@@ -99,6 +102,7 @@ def prints_greeting(first_name, last_name, town):
         print(f"Hi {full_name}, I'd like to visit {town}!")
 
     return
+
 
 """PROMPT 4
 
@@ -123,12 +127,14 @@ Return:
 
 # Write your function here
 
+
 def test_if_berry(fruit):
-    """Tests whether a fruit is one of: strawberry, raspberry, blackburry,
+    """Test whether a fruit is one of: strawberry, raspberry, blackburry,
     currant. """
 
     berries = ['strawberry', 'raspberry', 'blackburry', 'currant']
     return fruit in berries
+
 
 """PROMPT 5
 
@@ -144,6 +150,21 @@ Return:
 """
 
 # Write your function here
+
+
+def calc_shipping(item):
+    """Return the shipping cost of an item.
+
+    Berries cost $0 to ship.
+    Everything else costs $5. """
+
+    berry = test_if_berry(item)
+
+    if berry == True:
+        return 0
+
+    else:
+        return 5
 
 
 """PROMPT 6
@@ -175,6 +196,46 @@ Return:
 # Write your function here
 
 
+def calc_total_cost(base_price, state, tax_decimal_percent = 0.05):
+    """Calculate the total cost of something with taxes and fees.
+    
+    Fees vary by state, and are added after tax:
+    CA: + 3% for recycling
+    PA: + $2 for safety
+    MA:
+        + $1 if total is less than or equal to $100
+        + $3 if total is greater than $100  """
+
+    #convert input price to a float
+    base_price = float(base_price)
+    tax_decimal_percent = float(tax_decimal_percent)
+
+    #calculate taxes
+    taxes = base_price * tax_decimal_percent
+
+    #calculate fees, per state rules
+    if state == 'CA':
+        fees = (base_price + taxes) * 0.03
+
+    elif state == 'PA':
+        fees = 2.00
+
+    elif state == 'MA':
+        if base_price <= 100.00:
+            fees = 1
+
+        elif base_price > 100.00:
+            fees = 3.00
+
+    else:
+        fees = 0.00
+
+    #calculate total
+    total_cost = base_price + taxes + fees
+
+    return total_cost
+
+
 """PROMPT 7
 
 Write a function that takes in a list and *any* number of additional arguments.
@@ -194,6 +255,18 @@ Return:
 """
 
 # Write your function here
+
+
+def append_list(input_list, *args):
+    """Create a list that includes an original list and added items """
+
+    #create a list that contains all the items from the input list
+    output_list = input_list[::]
+
+    #append each additional input argument
+    output_list.append(args)
+
+    return output_list
 
 
 """PROMPT 8
@@ -223,11 +296,26 @@ Return:
 # Write your function here
 
 
+def tuples_triple_word(word):
+    """Tripple a word and return it with the original, as a tuple. """
+
+    def triples_word(word):
+        """Triples a word """
+
+        return word*3
+
+    tripple = triples_word(word)
+
+
+    return (word, tripple)
 
 
 
 
+
+#------------------------------------------------------------------
 """Developer test code is below"""
+
 #tests_hometown_output = tests_hometown('Barthalameau')
 #print(tests_hometown_output)
 
@@ -238,3 +326,13 @@ Return:
 #print(tests_prints_greeting)
 
 #print(test_if_berry('apple'))
+
+#print(calc_shipping('strawberry'))
+
+#print(calc_total_cost(100.00, 'IW', 0.3))
+
+#some_args = 'apple', 'berry', 'cherry'
+# print(append_list([1, 2], 984, 212, 312))
+
+print(tuples_triple_word('beans'))
+
